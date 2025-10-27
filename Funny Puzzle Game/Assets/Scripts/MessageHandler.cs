@@ -28,7 +28,7 @@ public class MessageHandler : NetworkBehaviour
     {
         if(collision.gameObject.GetComponent<Collectible>())
         {
-            CmdSendMessage(" has collected a collectible");
+            //CmdSendMessage(" has collected a collectible");
             //CollectiblesUI.Instance.AddCollectiblePoint(1);
         }
     }

@@ -5,11 +5,16 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public class  CollectibleUI: NetworkBehaviour
+{
+    
+}
+
 public class CollectiblesUI : Singleton<CollectiblesUI>
 {
     [SerializeField] GameObject inGameUi;
     [SerializeField] TextMeshProUGUI collectibles;
-
+    [SyncVar][SerializeField] int points;
     [SerializeField] int collectedCollectibles;
 
 
@@ -37,14 +42,14 @@ public class CollectiblesUI : Singleton<CollectiblesUI>
         {
             inGameUi.SetActive(true);
         }*/
-        collectibles.SetText("Collectibles: " + collectedCollectibles);
+        collectibles.SetText("Collectibles: " + points);
        
     }
 
-  /*  public void AddCollectiblePoint(int value)
+    public void AddCollectiblePoint(int value)
     {
-        collectedCollectibles += value;
-    }*/
+        points += value;
+    }
 
     public void setCollectiblePoints(int value)
     {

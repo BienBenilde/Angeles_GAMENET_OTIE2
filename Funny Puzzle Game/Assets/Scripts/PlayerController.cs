@@ -7,7 +7,7 @@ public class PlayerController : NetworkBehaviour
 {
     Rigidbody2D rb;
 
-    [SyncVar] [SerializeField] int collectedPickup;
+    //[SyncVar] [SerializeField] int collectedPickup;
 
     // Start is called before the first frame update
     void Start()
@@ -37,8 +37,9 @@ public class PlayerController : NetworkBehaviour
             {  return; }
             else 
             {
-                collectedPickup++;
-                CmdUpdatePickup(collectedPickup);
+                //collectedPickup++;
+                //CmdUpdatePickup(collectedPickup);
+                CmdUpdatePickup(1);
             }
         }
     }
@@ -51,7 +52,7 @@ public class PlayerController : NetworkBehaviour
     [ClientRpc]
     void RpcUpdatePickup(int value)
     {
-        CollectiblesUI.Instance.setCollectiblePoints(value);
+        CollectiblesUI.Instance.AddCollectiblePoint(value);
         Debug.Log("collected");
     }
 }
