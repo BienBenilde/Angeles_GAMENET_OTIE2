@@ -7,6 +7,10 @@ public class PlayerController : NetworkBehaviour
 {
     Rigidbody2D rb;
 
+    //Projectile to Break walls
+    [SerializeField]
+    GameObject projectilePrefab;
+
     //[SyncVar] [SerializeField] int collectedPickup;
 
     // Start is called before the first frame update
@@ -27,7 +31,31 @@ public class PlayerController : NetworkBehaviour
 
         rb.AddForce(movement);
         //this.transform.position += (Vector3)movement * Time.deltaTime;
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            CmdSpawnProjectile();
+        }
+
     }
+
+    [Command]
+    void CmdSpawnProjectile()
+    {
+        //RpcSpawnProjectile();
+        GameObject obj = Instantiate(projectilePrefab, this.transform.position + new Vector3(0, 2.0f, 0), Quaternion.identity);
+        obj.GetComponent<Rigidbody2D>().velocity = new Vector3(Random.value, Random.value, 0).normalized * 10;
+        //RpcSpawnProjectile(obj);
+        NetworkServer.Spawn(obj, connectionToClient);
+
+    }
+
+    [ClientRpc]
+    void RpcSpawnProjectile(GameObject obj)
+    {
+        obj.GetComponent<Rigidbody2D>().velocity = new Vector3(Random.value, Random.value, 0).normalized * 10;
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

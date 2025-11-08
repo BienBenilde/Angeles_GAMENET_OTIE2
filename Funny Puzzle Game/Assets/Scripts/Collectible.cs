@@ -35,7 +35,10 @@ public class Collectible : NetworkBehaviour
         }*/
         //Debug.Log("Collectible Obtained!");
         //CmdSendMessage("has gotten a collectible!");
+        if(collision.gameObject.GetComponent<PlayerController>())
+        {
             Destroy(this.gameObject);
+        }
 
     }
 

@@ -70,6 +70,7 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
+  projectilePrefab: {fileID: 8127405429701572769, guid: 5925fa7e222372546a3f6cd0f46dc2a8, type: 3}
 --- !u!50 &9189140077217768121
 Rigidbody2D:
   serializedVersion: 4
@@ -188,6 +189,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d87b55eee5ea0498c186fc43aff26b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
 --- !u!1 &5281108259458279518
 GameObject:
   m_ObjectHideFlags: 0

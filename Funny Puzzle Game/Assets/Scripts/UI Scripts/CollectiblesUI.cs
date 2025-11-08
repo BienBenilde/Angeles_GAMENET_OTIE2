@@ -17,6 +17,7 @@ public class CollectiblesUI : Singleton<CollectiblesUI>
     [SyncVar][SerializeField] int points;
     [SerializeField] int collectedCollectibles;
 
+    public int getPoints { get { return points; } }
 
     private void Awake()
     {
