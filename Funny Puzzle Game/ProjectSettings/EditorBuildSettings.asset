@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/RoomLobbyScene.unity
     guid: 043c6ca54d095db4c9cf093648a6db1d
   - enabled: 1
+    path: Assets/Scenes/PersistentScene.unity
+    guid: b45c9ed58e883684d9f2fb5f27223c7f
+  - enabled: 1
     path: Assets/Scenes/Online Scene.unity
     guid: 734bbdcbb9895e64f8082312593b7e0e
+  - enabled: 1
+    path: Assets/Scenes/Game Scene 2.unity
+    guid: a0f3f306dee4e8b4bae5a8324cae9fc6
   m_configObjects: {}

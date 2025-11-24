@@ -497,6 +497,7 @@ GameObject:
   - component: {fileID: 884571045}
   - component: {fileID: 884571047}
   - component: {fileID: 884571048}
+  - component: {fileID: 884571049}
   m_Layer: 0
   m_Name: ~NetworkManager
   m_TagString: Untagged
@@ -598,9 +599,22 @@ MonoBehaviour:
   minPlayers: 1
   roomPlayerPrefab: {fileID: 4833119409470003289, guid: 411986d344e413f489173e84571f1238, type: 3}
   RoomScene: Assets/Scenes/RoomLobbyScene.unity
-  GameplayScene: Assets/Scenes/Online Scene.unity
+  GameplayScene: Assets/Scenes/PersistentScene.unity
   _allPlayersReady: 0
   clientIndex: 0
+  firstSceneToLoad: Assets/Scenes/Online Scene.unity
+--- !u!114 &884571049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884571044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b979f26c95d34324ba005bfacfa9c4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +625,6 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -619,14 +632,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &963194226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
